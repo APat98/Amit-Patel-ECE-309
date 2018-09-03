@@ -1,24 +1,44 @@
 #include <stdio.h>
- 
+
+class Strings {
+public:
+  const char * str;
+  Strings(const char *as = "")
+  {
+    str = as;
+  }
+};
+
 class List {
-private:
-      class ListNode{
+ private:
+   class ListNode{
     private:
-      Item item;
+      Strings string;
       ListNode *next;
     public:
-      ListNode(Item a)
-        { item = a; next=NULL; }
-      ListNode* getNext() { return next; }
-      void setNext(ListNode *n) { next = n; }
-      Item getItem() { return item; }
-      };
+      ListNode(Strings a)
+      { 
+        strings = a; 
+        next=NULL; 
+      }
+      ListNode* getNext() 
+      { 
+        return next; 
+      }
+      void setNext(ListNode *n) 
+      { 
+        next = n; 
+      }
+      Strings getStrings() 
+      { 
+        return strings; }
+     };
   
   ListNode *head;
   ListNode *tail;
 
-  public:
-  char* push_back(string);
+ public:
+  void push_back(string a);
   char* get(n);
   int length();
   char* remove_front();
@@ -26,3 +46,45 @@ private:
   List();
   ~List();
 };
+
+List::List()
+{
+ head = NULL;
+ tail = NULL;
+}
+
+void List::push_back(string a)
+{
+ ListNode *node = new ListNode(a);
+ if (head == NULL)
+   {
+     head = node;
+     tail = node;
+   }
+ else
+   {
+     tail->setNext(node);
+     tail = node;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
