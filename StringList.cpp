@@ -53,6 +53,14 @@ List::List()
  tail = NULL;
 }
 
+List::~List()
+{
+  Strings t;
+  while(!empty()) {
+      remove(t);
+  }
+}
+
 void List::push_back(string a)
 {
  ListNode *node = new ListNode(a);
@@ -67,6 +75,12 @@ void List::push_back(string a)
      tail = node;
    }
 }
+
+bool List::empty()
+{
+  return head==NULL;
+}
+
 
 
 
