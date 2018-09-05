@@ -13,7 +13,7 @@ class List {
  private:
    class ListNode{
     private:
-      Strings string;
+      Strings strings;
       ListNode *next;
     public:
       ListNode(Strings a)
@@ -39,7 +39,7 @@ class List {
 
  public:
   void push_back(strings a);
-  ListNode get(n);
+  ListNode get(int n);
   int length();
   bool remove_front(Strings &b);
   bool empty();
