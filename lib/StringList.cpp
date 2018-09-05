@@ -39,20 +39,21 @@ class List {
 
  public:
   void push_back(Strings a);
-  ListNode get(int n);
+  ListNode *get(int n);
   int length();
   bool remove_front(Strings &b);
   bool empty();
   List();
   ~List();
   bool remove(Strings &a);
-  int i = 0;
+  int i;
 };
 
 List::List()
 {
  head = NULL;
  tail = NULL;
+ i = 0;
 }
 
 List::~List()
@@ -105,10 +106,10 @@ int List::length()
    return i;
 }
 
-ListNode List::get(int n)
+ListNode* List::get(int n)
 {
   int k;
-  ListNode nth=head;
+  ListNode* nth=head;
   for(k=0;k<n;k++){
      nth = nth.getNext;
   }
@@ -123,7 +124,7 @@ bool List::remove(Strings &copy)
     ListNode *tmp = head->getNext();
     delete head;
     head = tmp;
-    if (tmp=NULL)
+    if (tmp==NULL)
       tail = NULL;
     return true;
   }
