@@ -106,12 +106,12 @@ int List::length()
    return i;
 }
 
-ListNode* List::get(int n)
+ListNode List::*get(int n)
 {
   int k;
   ListNode* nth=head;
   for(k=0;k<n;k++){
-     nth = nth.getNext;
+     nth = nth->getNext;
   }
  return nth;
 }
