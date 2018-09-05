@@ -9,9 +9,7 @@ public:
   }
 };
 
-class List {
- private:
-   class ListNode{
+class ListNode{
     private:
       Strings strings;
       ListNode *next;
@@ -33,7 +31,9 @@ class List {
       { 
         return strings; }
      };
-  
+
+class List {
+ private:  
   ListNode *head;
   ListNode *tail;
 
