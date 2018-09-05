@@ -38,13 +38,14 @@ class List {
   ListNode *tail;
 
  public:
-  void push_back(string a);
-  char* get(n);
+  void push_back(strings a);
+  ListNode get(n);
   int length();
-  char* remove_front();
+  bool remove_front(Strings &b);
   bool empty();
   List();
   ~List();
+  int i = 0;
 };
 
 List::List()
@@ -61,9 +62,10 @@ List::~List()
   }
 }
 
-void List::push_back(string a)
+void List::push_back(strings a)
 {
  ListNode *node = new ListNode(a);
+ i++;
  if (head == NULL)
    {
      head = node;
@@ -81,8 +83,36 @@ bool List::empty()
   return head==NULL;
 }
 
+bool List::remove_front(Strings &)
+{
+  if (!empty())
+    {
+      copy = head->getStrings();
+      ListNode *tmp = head->getNext();
+      delete head; 
+      i--;
+      head = tmp;
+      if (tmp==NULL)
+         tail = NULL;
+      return true;
+    }
+  return false;
+}
 
+int List::length()
+{
+   return i;
+}
 
+ListNode List::get(int n)
+{
+  int k;
+  ListNode nth=head
+  for(k=0;k<n;k++){
+     nth = nth.getNext;
+  }
+ return nth;
+}
 
 
 
